@@ -11,19 +11,15 @@ html{
 
 body {
   /*background-image: url('../img/fundo.jpg');*/
-  background-color: rgba(64,103,118,1);
+  /*background-color: rgba(64,103,118,1);*/
+  background-color: rgba(184, 173, 160,1);
   background-size: auto 95vh;
   font-family: 'Roboto', sans-serif;
   font-size: 16px; 
   min-height: 100vh;
 }
 
-@media (min-width:400px) {
-  body{
-    font-size: 16px;
-    background-size: auto 100vW;
-  }
-}
+
 
 header{
   height: 95vh;
@@ -31,6 +27,7 @@ header{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  top: 0;
 }
 
 .menu{
@@ -65,7 +62,7 @@ a{
 }
 
 .menu a:hover{
-  background-color: teal;
+  background-color: rgb(204, 86, 18);
   color: whitesmoke;
 }
 
@@ -75,22 +72,19 @@ a:hover{
 
 .img-title{
   object-fit: cover;  
-  width: 10em;
-  height: 10em; 
-  border-radius: 5%;
-  object-position: center;  
-  margin-left: 5em;
+  width: 84em;
+  height: 25em;   
   object-position: top;
-  
+  object-position: left;
 }
 
 .site-title{
-  color: whitesmoke;
+  color: black;
   text-align: center;
 }
 
 .site-subtitle{
-  color: whitesmoke; 
+  color:  black; 
   text-align: center; 
   font-family: 'Roboto', sans-serif;
 }
@@ -99,10 +93,10 @@ a:hover{
 {
   background-color:  whitesmoke;       
   clear: both;
-  height: 7vh;      
+  height: 6vh;      
   color: black;
   position: fixed;
-  bottom: 0;
+  bottom: 0vh;
   width: 100vw;
   font-family: 'Roboto', sans-serif;
   
@@ -132,14 +126,15 @@ a:hover{
 }
 
 .sobre h1{
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 2em;
   text-align: center;  
 }
 
 .sobre .grid{
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5em;
   justify-content: center;  
   align-content: center;
@@ -147,9 +142,11 @@ a:hover{
   margin-top: 2em;  
 }
 
+/*
 @media(min-width: 300px){
   .sobre .grid{
     grid-template-columns: repeat(2, 150px);
+    grid-template-row: repeat(3 50px);
     justify-content: center;
   }
 }
@@ -157,6 +154,7 @@ a:hover{
 @media(min-width: 500px){
   .sobre .grid{
     grid-template-columns: repeat(2, 250px);
+    grid-template-row: repeat(3 50px);
     justify-content: center;
   }
 }
@@ -164,18 +162,21 @@ a:hover{
 @media(min-width: 720px){
   .sobre .grid{
     grid-template-columns: repeat(2, 350px);
+    grid-template-row: repeat(3 50px);
     justify-content: center;
   }
-}
+}*/
 
 .img-sobre{
+  flex: 1 0 100%;
   border-radius: 10px;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
-  width: 150px;
-  margin-bottom: 1em;   
+  width: 300px;
+  margin-bottom: 1em; 
+  grid-row: span 3;  
 }
-
+/*
 @media(min-width: 500px){
   .img-sobre{
     border-radius: 10px;
@@ -194,12 +195,20 @@ a:hover{
     width: 330px;
     margin-bottom: 1em;   
   }
-}
+}*/
 
 .sobre h2{
-  color: white;  
+  flex: 1 0 100%;
+  color: black;  
   font-size: 1em;
-  text-align: center;  
+  text-align: left;  
+}
+
+.sobre h3{
+  flex: 1 0 100%;
+  color: black;  
+  font-size: 1em;
+  text-align: left;  
 }
 
 .portfolio {
@@ -209,7 +218,7 @@ a:hover{
 }
 
 
-.portfolio .grid{
+/*.portfolio .grid{
   display: grid;
   gap: 1em;
   justify-content: center;  
@@ -218,24 +227,60 @@ a:hover{
 
 @media(min-width: 500px){
   .portfolio .grid{
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(2, 300px);
     justify-content: center;
   }
 }
 
 @media(min-width: 720px){
   .portfolio .grid{
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(2, 350px);
     align-content: center;
     justify-content: center;    
   }
 }
+*/
 
+.portfolio .grid{
+  display: grid;
+  gap: 0.5em;
+  justify-content: center;  
+  align-content: center;
+  grid-template-columns: 150px;
+  margin-top: 2em;  
+}
+
+@media(min-width: 300px){
+  .portfolio .grid{
+    grid-template-columns: repeat(1, 250px);
+    justify-content: center;
+  }
+}
+
+@media(min-width: 500px){
+  ..portfolio .grid{
+    grid-template-columns: repeat(2, 250px);
+    justify-content: center;
+  }
+}
+
+@media(min-width: 720px){
+  .portfolio .grid{
+    grid-template-columns: repeat(2, 350px);
+    justify-content: center;
+  }
+}
 .portfolio h2{
   font-weight: bold;
   text-align: center;
   font-size: 2em;
-  color: white;
+  color:black;
+}
+
+.portfolio h3{
+  color: black;  
+  font-size: 1em;
+  text-align: left; 
 }
 
 .portfolio figure{
@@ -244,14 +289,32 @@ a:hover{
 
 .img-portfolio{
   border-radius: 10px;
-  height: 180px;
+  height: 250px;
   object-fit: cover;
-  width: 180px;
+  width: 250px;
   margin-bottom: 1em;
-  margin-top: 1em;
 }
 
 @media(min-width: 500px){
+  .img-portfolio{
+    border-radius: 10px;
+    height: 350px;
+    object-fit: cover;
+    width: 250px;
+    margin-bottom: 1em;   
+  }
+}
+
+@media(min-width: 720px){
+  .img-portfolio{
+    border-radius: 10px;
+    height: 430px;
+    object-fit: cover;
+    width: 330px;
+    margin-bottom: 1em;   
+  }
+}
+/*@media(min-width: 500px){
   .img-portfolio{
     height: 180px;
     width: 180px;      
@@ -263,7 +326,7 @@ a:hover{
     height: 200px;
     width: 200px;      
   }
-}
+}*/
 
 .portfolio figcaption {
   color: whitesmoke;
@@ -279,36 +342,22 @@ a:hover{
 }
 
 .contato h2{
-  margin-bottom: 4em;
+  
   font-weight: bold;
   text-align: center;
   font-size: 2em;
-  color: white;  
+  color: black;  
 }
 
-.contato a{
-  margin: 0.1em;
-  color: whitesmoke;
-  font-size: 4em;
-  transition: text-shadow 500ms
+.contato h3{
+  margin-top: 12em;
+  font-weight: bold;
+  text-align: left; 
+  line-height: 3;
+  font-size: 15px;
+  
 }
 
-@media(min-width: 500px){
-  .contato a{
-    font-size: 5em; 
-    margin: 0.3em;   
-  }
-}
 
-@media(min-width: 720px){
-  .contato a{
-    font-size: 8em; 
-    margin: 0.3em;   
-  }
-}
 
-.contato a:active,
-.contato a:hover{
-  text-decoration: none;  
-  text-shadow: 0px 0px 10px rgba(255,255,255,.5);
-}
+
